@@ -4,7 +4,6 @@ import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import Gallery from "./pages/Gallery";
 import HomePage from "./pages/HomePage";
-import Work from "./pages/Work";
 import Root from "./routes/root";
 
 const router = createBrowserRouter([
@@ -28,10 +27,6 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <Gallery />,
-      },
-      {
-        path: "/works",
-        element: <Work />,
       },
     ],
   },

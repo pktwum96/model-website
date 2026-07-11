@@ -1,40 +1,100 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Divider, Link, Typography } from "@mui/material";
+import { siteContent } from "../content/site";
 
 function About() {
+  const {
+    name,
+    role,
+    location,
+    specialties,
+    email,
+    instagram,
+    instagramHandle,
+    bio,
+  } = siteContent;
+
   return (
-    <Box>
-      <Container>
-        <Typography gutterBottom variant="h4" align="center" marginTop={4}>
-          Benjamin Tetteh
+    <Box sx={{ py: { xs: 6, md: 10 } }}>
+      <Container maxWidth="sm">
+        <Typography variant="h4" align="center" gutterBottom>
+          {name}
+        </Typography>
+        <Typography variant="subtitle1" align="center" sx={{ mb: 6 }}>
+          {role}
         </Typography>
 
-        <Typography variant="body1" gutterBottom>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-          delectus sit labore dignissimos odit voluptatum nesciunt minima maxime
-          deserunt voluptatibus. Similique perferendis enim sint. Veniam
-          deserunt eveniet sequi placeat voluptates? Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Facilis blanditiis commodi voluptatibus
-          accusamus qui obcaecati fugit libero esse veritatis sint veniam quod,
-          aliquam quibusdam voluptate? Ipsam ratione eos voluptates dolore!
+        <Box sx={{ maxWidth: 680, mx: "auto" }}>
+          <Typography variant="body1" paragraph>
+            {bio.paragraph1}
+          </Typography>
+          <Typography variant="body1" paragraph>
+            {bio.paragraph2}
+          </Typography>
+          <Typography variant="body1" paragraph>
+            {bio.paragraph3}
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              fontStyle: "italic",
+              fontFamily: '"Cormorant Garamond", Georgia, serif',
+              fontSize: "1.25rem",
+              color: "text.secondary",
+              my: 4,
+              textAlign: "center",
+            }}
+          >
+            &ldquo;{bio.pullQuote}&rdquo;
+          </Typography>
+        </Box>
+
+        <Divider sx={{ my: 6, maxWidth: 680, mx: "auto" }} />
+
+        <Typography variant="subtitle1" align="center" sx={{ mb: 6 }}>
+          {location} · {specialties}
         </Typography>
-        <Typography gutterBottom variant="body1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-          delectus sit labore dignissimos odit voluptatum nesciunt minima maxime
-          deserunt voluptatibus. Similique perferendis enim sint. Veniam
-          deserunt eveniet sequi placeat voluptates? Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Facilis blanditiis commodi voluptatibus
-          accusamus qui obcaecati fugit libero esse veritatis sint veniam quod,
-          aliquam quibusdam voluptate? Ipsam ratione eos voluptates dolore!
-        </Typography>
-        <Typography gutterBottom variant="body1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-          delectus sit labore dignissimos odit voluptatum nesciunt minima maxime
-          deserunt voluptatibus. Similique perferendis enim sint. Veniam
-          deserunt eveniet sequi placeat voluptates? Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Facilis blanditiis commodi voluptatibus
-          accusamus qui obcaecati fugit libero esse veritatis sint veniam quod,
-          aliquam quibusdam voluptate? Ipsam ratione eos voluptates dolore!
-        </Typography>
+
+        <Box sx={{ textAlign: "center" }}>
+          <Typography variant="h6" gutterBottom>
+            Bookings &amp; Inquiries
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              justifyContent: "center",
+              gap: { xs: 1, sm: 3 },
+              mt: 2,
+            }}
+          >
+            <Link
+              href={`https://www.facebook.com/benjamin.tetteh.9440`}
+              underline="hover"
+              color="text.primary"
+              sx={{ letterSpacing: "0.04em" }}
+            >
+              Facebook
+            </Link>
+            <Typography
+              component="span"
+              color="text.secondary"
+              sx={{ display: { xs: "none", sm: "inline" } }}
+            >
+              ·
+            </Typography>
+            <Link
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="hover"
+              color="text.primary"
+              sx={{ letterSpacing: "0.04em" }}
+            >
+              {instagramHandle}
+            </Link>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
