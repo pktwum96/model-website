@@ -2,16 +2,8 @@ import { Box, Container, Divider, Link, Typography } from "@mui/material";
 import { siteContent } from "../content/site";
 
 function About() {
-  const {
-    name,
-    role,
-    location,
-    specialties,
-    email,
-    instagram,
-    instagramHandle,
-    bio,
-  } = siteContent;
+  const { name, role, location, specialties, instagram, instagramHandle, bio } =
+    siteContent;
 
   return (
     <Box sx={{ py: { xs: 6, md: 10 } }}>
