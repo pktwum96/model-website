@@ -23,12 +23,13 @@ export const portfolioImages: PortfolioImage[] = [
     img: BenBanner,
     title: "Campaign Portrait",
     alt: "Benjamin Tetteh in a campaign portrait with direct gaze",
-    quilted: { cols: 4, rows: 1 },
+    quilted: { cols: 2, rows: 2 },
   },
   {
     img: MainFace,
     title: "Studio Headshot",
     alt: "Close-up studio headshot of Benjamin Tetteh",
+    quilted: { cols: 1, rows: 1 },
   },
   {
     img: YellowLocs,
